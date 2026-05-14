@@ -1,9 +1,18 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f8f0f0;
   margin: 0;
   padding: 20px;
+  background-image: url("/imagens/livros.jpg");
+  /* Faz a imagem ocupar toda a tela */
+  background-size: cover;
+  /* Centraliza a imagem no fundo */
+  background-position: center;
+  /* Impede a imagem de repetir */
+  background-repeat: no-repeat;
+  /* Deixa o fundo fixo ao rolar a página */
+  background-attachment: fixed;
 }
+
 
 /* topo*/
 .topo {
@@ -26,7 +35,27 @@ h1 {
   margin-bottom: 40px;
   font-size: 50px;
 }
-
+/* sub titulo */
+h2 {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+/*apresentaçao dos cards*/
+h3 {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+/* dentro dos cards */
+p {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
 /* MENU */
 nav {
   list-style: none;
@@ -38,7 +67,7 @@ nav {
 }
 
 /* LINKS */
-nav a{
+nav a {
   text-decoration: none;
   color: white;
   background-color: #1f4e79;
@@ -58,6 +87,7 @@ nav a:hover {
   width: 90%;
   max-width: 1100px;
   margin: 30px auto;
+  background-color: rgba(176, 225, 248, 0.92);
 }
 .hero {
   margin-bottom: 20px;
@@ -66,35 +96,122 @@ nav a:hover {
   display: flex;
   gap: 20px;
 }
+
 .card {
   flex: 1; /*faz os cards dividirem
 o espaço disponível igualmente*/
   padding: 30px;
-  border: 1px solid #ccc;
+  border: 5px solid #ffffff;
   border-radius: 8px;
   text-align: center;
 }
 
 /* formulario*/
 .formulario {
+  justify-content: center;
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  margin: 25px;
+  padding: 25px;
+  border-radius: 1px;
+  color: #0f0f0fe7;
+  background-color: rgba(255, 255, 255, 0.75);
 }
-/* status*/
-.disponivel {
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+
+.formulario button:hover {
+  background-color: #0278ff;
+  transform: translateY(-2px);
 }
-/* status*/
-.emprestado {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 10px 15px;
+label {
+  text-shadow: #01c4ff;
+  border-radius: 10px;
+}
+select option {
   border-radius: 5px;
-  cursor: pointer;
+  border: 0.05px;
+}
+input {
+  border-radius: 5px;
+  border: 1px;
+}
+button {
+  color: aliceblue;
+  background-color: #1f4e79;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 7.5px;
+  border: 0px;
+}
+button:hover {
+  background-color: #01c4ff;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1260px) {
+  .topo {
+    padding: 20px;
+  }
+  .cards {
+    flex-wrap: wrap;
+  }
+  .card {
+    flex: 1 1 45%;
+  }
+  .formulario {
+    flex-wrap: wrap;
+  }
+  .formulario {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .topo {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  nav a {
+    display: block;
+    margin: 8px 0;
+  }
+  .cards {
+    flex-direction: column;
+  }
+  .formulario {
+    flex-direction: column;
+  }
+  .formulario {
+    flex: 1 1 45%;
+  }
+}
+@media (max-width: 768px) {
+  /* Tablet */
+  .topo {
+padding: 20px; }
+
+  .cards {
+    flex-wrap: wrap;
+  }
+  .card {
+    flex: 1 1 45%;
+  }
+}
+@media (max-width: 360px) {
+  /* Celular */
+  .topo {
+flex-direction: column;
+gap: 12px;
+text-align: center; }
+
+  .cards {
+    flex-direction: column;
+  }
+  .formulario {
+    flex-direction: column;
+  }
+  .formulario {
+    flex: 1 1 45%;
+  }
 }
