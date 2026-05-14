@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Livros</title>
+  </head>
+
+  <body>
+   <header class="topo">
+      <h1>Livros Disponiveis</h1>
+        <nav>
+  
+            <a href="/paginas/index.html">Home</a>
+            <a href="/paginas/aluno.html">Aluno</a>
+            <a href="/paginas/emprestimos.html">Emprestimos</a>
+            
+    
+        </nav>
+   </header>
+    <br></br>
+
+   <form class="formulario">
+
+    <label for="nome">Título:</label>
+    <input type="text" id="nome" placeholder="Digite o título do livro"required/>
+
+    <label for="autor">Autor:</label>
+    <input type="text" id="autor" placeholder="Digite o autor" required/>
+
+    <label for="categoria">Categoria:</label>
+    <input type="text" id="categoria" placeholder="Digite a categoria" required/>
+
+    <label for="ano">Ano de publicação:</label>
+    <input type="date" id="ano"required/>
+
+    <label for="status">Status:</label>
+    <select id="status" required>
+        <option value="">Selecione</option>
+        <option value="Disponível">Disponível</option>
+        <option value="Emprestado">Emprestado</option>
+    </select>
+
+    <button type="submit">Salvar Livro</button>
+  </form>
+    
+  </body>
+</html>
