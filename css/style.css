@@ -13,7 +13,6 @@ body {
   background-attachment: fixed;
 }
 
-
 /* topo*/
 .topo {
   max-width: 90%;
@@ -114,7 +113,7 @@ o espaço disponível igualmente*/
   margin-bottom: 15px;
   margin: 25px;
   padding: 25px;
-  border-radius: 1px;
+  border-radius: 10px;
   color: #0f0f0fe7;
   background-color: rgba(255, 255, 255, 0.75);
 }
@@ -146,6 +145,35 @@ button {
 button:hover {
   background-color: #01c4ff;
   transform: scale(1.05);
+}
+/* emprestimos tabela */
+.tabela-emprestimos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabela-emprestimos th {
+  background-color: #1f4e79;
+  color: white;
+  padding: 15px;
+}
+
+.tabela-emprestimos td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.tabela-emprestimos tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.tabela-container{
+    width: 100%;
+    overflow-x: auto;
 }
 
 @media (max-width: 1260px) {
@@ -189,7 +217,8 @@ button:hover {
 @media (max-width: 768px) {
   /* Tablet */
   .topo {
-padding: 20px; }
+    padding: 20px;
+  }
 
   .cards {
     flex-wrap: wrap;
@@ -201,9 +230,10 @@ padding: 20px; }
 @media (max-width: 360px) {
   /* Celular */
   .topo {
-flex-direction: column;
-gap: 12px;
-text-align: center; }
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
 
   .cards {
     flex-direction: column;

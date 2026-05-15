@@ -13,9 +13,54 @@
 
       <nav>
         <a href="index.html">Home</a>
-        <a href="/paginas/aluno.html">Aluno</a>
+        <a href="/paginas/sobre.html">Sobre</a>
         <a href="/paginas/livros.html">livros</a>
       </nav>
     </header>
+   
+
+   <form class="formulario" id="formEmprestimo">
+<h2>Controle de Emprestimos</h2>
+    <label for="nome">Aluno(a):</label>
+    <input type="text" id="nome" placeholder="Digite o seu nome"required/>
+
+    <label for="autor">Livro:</label>
+    <input type="text" id="name" placeholder="Digite o nome do livro" required/>
+
+    <label for="ano">Data do Empréstimo:</label>
+    <input type="date" id="emprestimo"required/>
+
+    <label for="ano">Data de Devolução:</label>
+    <input type="date" id="Devolução"required/>
+<label for="status">Status:</label>
+
+
+    <button type="submit">Registrar Empréstimo</button>
+  </form>
+
+<h2>Histórico de Empréstimos</h2>
+<div class="tabela-container">
+<table class="tabela-emprestimos">
+
+    <thead>
+        <tr>
+            <th>Aluno</th>
+            <th>Livro</th>
+            <th>Empréstimo</th>
+            <th>Devolução</th>
+            <th>Status</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <!-- usar no js esse id para preencher com js -->
+    <tbody id="corpoTabela"> 
+
+    </tbody>
+
+</table>
+</div>
+
+<script src="/js/scripit/emprestimos.js"></script>
+
   </body>
 </html>
