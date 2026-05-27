@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 * {
-=======
-*{
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,48 +9,24 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 20px;
-<<<<<<< HEAD
-  background-image:linear-gradient(rgba(5, 10, 20, 0.72), rgba(10, 18, 32, 0.82)),
-  url("/imagens/livros.jpg");
-  /* faz a imagem ocupar toda a tela */
-  background-size: cover;
-  /* centraliza a imagem no fundo */
-  background-position: center;
-  /* impede a imagem de repetir */
-  background-repeat: no-repeat;
-=======
 
   background-image:
-  linear-gradient(
-    rgba(5, 10, 20, 0.72),
-    rgba(10, 18, 32, 0.82)
-  ),
-  url("/imagens/livros.jpg");
+    linear-gradient(
+      rgba(5, 10, 20, 0.72),
+      rgba(10, 18, 32, 0.82)
+    ),
+    url("../imagens/livros.jpg");
 
-  /* faz a imagem ocupar toda a tela */
   background-size: cover;
-
-  /* centraliza a imagem no fundo */
   background-position: center;
-
-  /* impede a imagem de repetir */
   background-repeat: no-repeat;
-
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
-  /* deixa o fundo fixo ao rolar a página */
   background-attachment: fixed;
 }
 
-/* topo*/
+/* topo */
 .topo {
   max-width: 100%;
   margin: 0;
-<<<<<<< HEAD
-  background-color: rgba(25, 45, 75, 0.55);
-  border: 1px solid rgba(0, 195, 255, 0.12);
-  padding: 20px 40px;
-  border-radius: 28px;
-=======
 
   background-color: rgba(25, 45, 75, 0.55);
 
@@ -66,9 +39,8 @@ body {
   border-radius: 28px;
 
   box-shadow:
-  0 8px 24px rgba(0, 0, 0, 0.35);
+    0 8px 24px rgba(0, 0, 0, 0.35);
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   text-decoration: none;
 
   align-items: center;
@@ -78,38 +50,22 @@ body {
 /* titulo */
 h1 {
   text-align: center;
-<<<<<<< HEAD
-  color: #d8f3ff;
-=======
 
   color: #d8f3ff;
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   margin-bottom: 40px;
 
   font-size: 50px;
-<<<<<<< HEAD
-  letter-spacing: -1px;
-  text-shadow: 0 0 12px rgba(0, 195, 255, 0.18);
-=======
 
   letter-spacing: -1px;
 
   text-shadow:
-  0 0 12px rgba(0, 195, 255, 0.18);
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
+    0 0 12px rgba(0, 195, 255, 0.18);
 }
 
 /* sub titulo */
 h2 {
   background-color: rgba(20, 30, 50, 0.72);
-<<<<<<< HEAD
-  color: #9edfff;
-  padding: 20px;
-  border-radius: 24px;
-  margin-top: 20px;
-  border: 1px solid rgba(0, 195, 255, 0.1);
-=======
 
   color: #9edfff;
 
@@ -120,17 +76,11 @@ h2 {
   margin-top: 20px;
 
   border: 1px solid rgba(0, 195, 255, 0.10);
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
 }
 
 /* apresentaçao dos cards */
 h3 {
   background-color: rgba(255, 255, 255, 0.06);
-<<<<<<< HEAD
-  color: #c6ecff;
-  padding: 20px;
-  border-radius: 20px;
-=======
 
   color: #c6ecff;
 
@@ -138,19 +88,11 @@ h3 {
 
   border-radius: 20px;
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   margin-top: 20px;
 }
 
 /* dentro dos cards */
 p {
-<<<<<<< HEAD
-  background-color: rgba(255, 255, 255, 0.349);
-  color: rgb(255, 255, 255);
-  padding: 20px;
-  border-radius: 20px;
-  margin-top: 20px;
-=======
   background-color: rgba(255, 255, 255, 0.04);
 
   color: rgba(255, 255, 255, 0.82);
@@ -161,7 +103,6 @@ p {
 
   margin-top: 20px;
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   line-height: 1.6;
 }
 
@@ -180,16 +121,16 @@ nav {
   margin: 0;
 }
 
+/*rodape*/
+.footer{
+  text-align: center;
+}
+
 /* links */
 nav a {
   text-decoration: none;
 
   color: white;
-<<<<<<< HEAD
-  background: linear-gradient(135deg, #123c66, #1f4e79);
-  padding: 12px 22px;
-  border-radius: 999px;
-=======
 
   background: linear-gradient(
     135deg,
@@ -201,24 +142,16 @@ nav a {
 
   border-radius: 999px;
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   transition: 0.3s;
 
   font-weight: bold;
-<<<<<<< HEAD
-  box-shadow: 0 4px 14px rgba(0, 140, 255, 0.18);
-=======
 
   box-shadow:
-  0 4px 14px rgba(0, 140, 255, 0.18);
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
+    0 4px 14px rgba(0, 140, 255, 0.18);
 }
 
 /* hover */
 nav a:hover {
-<<<<<<< HEAD
-  background: linear-gradient(135deg, #01c4ff, #0077ff);
-=======
   background: linear-gradient(
     135deg,
     #01c4ff,
@@ -228,8 +161,7 @@ nav a:hover {
   transform: translateY(-2px);
 
   box-shadow:
-  0 6px 18px rgba(1, 196, 255, 0.25);
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
+    0 6px 18px rgba(1, 196, 255, 0.25);
 }
 
 /* container */
@@ -239,12 +171,6 @@ nav a:hover {
   max-width: 1100px;
 
   margin: 30px auto;
-<<<<<<< HEAD
-  background-color: rgba(10, 20, 35, 0.52);
-  backdrop-filter: blur(16px);
-  border-radius: 30px;
-  padding: 25px;
-=======
 
   background-color: rgba(10, 20, 35, 0.52);
 
@@ -254,7 +180,6 @@ nav a:hover {
 
   padding: 25px;
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   border: 1px solid rgba(0, 195, 255, 0.08);
 }
 
@@ -269,18 +194,7 @@ nav a:hover {
 }
 
 .card {
-<<<<<<< HEAD
-  flex: 1; /* faz os cards dividirem
-  o espaço disponível igualmente */
-  padding: 30px;
-  border: 1px solid rgba(0, 195, 255, 0.08);
-  background-color: rgba(20, 30, 50, 0.842);
-  border-radius: 28px;
-=======
   flex: 1;
-
-  /* faz os cards dividirem
-  o espaço disponível igualmente */
 
   padding: 30px;
 
@@ -292,16 +206,12 @@ nav a:hover {
 
   border-radius: 28px;
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   text-align: center;
 
   box-shadow:
-  0 8px 20px rgba(0, 0, 0, 0.18);
+    0 8px 20px rgba(0, 0, 0, 0.18);
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
 /* formulario */
 .formulario {
   justify-content: center;
@@ -315,12 +225,6 @@ nav a:hover {
   margin: 25px;
 
   padding: 25px;
-<<<<<<< HEAD
-  border-radius: 28px;
-  color: #ffffff;
-  background-color: rgba(20, 30, 50, 0.548);
-  border: 1px solid rgba(0, 195, 255, 0.08);
-=======
 
   border-radius: 28px;
 
@@ -333,28 +237,20 @@ nav a:hover {
   border: 1px solid rgba(0, 195, 255, 0.08);
 
   box-shadow:
-  0 6px 18px rgba(0, 0, 0, 0.16);
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
+    0 6px 18px rgba(0, 0, 0, 0.16);
 }
 
 .formulario button:hover {
   background-color: #01c4ff;
-<<<<<<< HEAD
-=======
 
   transform: translateY(-2px);
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
 }
 
 label {
   color: #d7efff;
-<<<<<<< HEAD
-  border-radius: 10px;
-=======
 
   border-radius: 10px;
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   font-weight: bold;
 }
 
@@ -367,20 +263,6 @@ select option {
 input,
 select {
   border-radius: 16px;
-<<<<<<< HEAD
-  border: 1px solid rgba(0, 195, 255, 0.1);
-  padding: 12px;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #1f4e79;
-}
-
-button {
-  color: aliceblue;
-  background: linear-gradient(135deg, #123c66, #1f4e79);
-  border-radius: 18px;
-  margin: 15px;
-  padding: 10px 18px;
-=======
 
   border: 1px solid rgba(0, 195, 255, 0.10);
 
@@ -398,7 +280,7 @@ select:focus {
   border-color: #01c4ff;
 
   box-shadow:
-  0 0 0 4px rgba(1, 196, 255, 0.12);
+    0 0 0 4px rgba(1, 196, 255, 0.12);
 }
 
 button {
@@ -416,19 +298,15 @@ button {
 
   padding: 10px 18px;
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   border: 0px;
 
   transition: 0.3s;
 
   box-shadow:
-  0 4px 14px rgba(0, 140, 255, 0.16);
+    0 4px 14px rgba(0, 140, 255, 0.16);
 }
 
 button:hover {
-<<<<<<< HEAD
-  background: linear-gradient(135deg, #01c4ff, #0077ff);
-=======
   background: linear-gradient(
     135deg,
     #01c4ff,
@@ -436,18 +314,11 @@ button:hover {
   );
 
   transform: scale(1.03);
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
 }
 
 /* emprestimos tabela */
 .tabela-emprestimos {
   width: 100%;
-<<<<<<< HEAD
-  margin-top: 20px;
-  background-color: rgba(20, 30, 50, 0.548);
-  border: 1px solid rgba(0, 195, 255, 0.08);
-  border-radius: 24px;
-=======
 
   border-collapse: collapse;
 
@@ -459,24 +330,19 @@ button:hover {
 
   border-radius: 24px;
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   overflow: hidden;
 
   box-shadow:
-  0 6px 18px rgba(0, 0, 0, 0.16);
+    0 6px 18px rgba(0, 0, 0, 0.16);
 }
 
 .tabela-emprestimos th {
-<<<<<<< HEAD
-  background: linear-gradient( #1f4e79);
-=======
   background: linear-gradient(
     135deg,
     #123c66,
     #1f4e79
   );
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   color: white;
 
   padding: 15px;
@@ -486,13 +352,9 @@ button:hover {
   padding: 12px;
 
   text-align: center;
-<<<<<<< HEAD
-  color: white;
-=======
 
   color: white;
 
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -500,58 +362,10 @@ button:hover {
   background-color: rgba(0, 195, 255, 0.06);
 }
 
-<<<<<<< HEAD
 .tabela-container {
-  width: 100%;
-}
-
-/* sobre */
-
-.sobre {
-  margin-top: 30px;
-  padding: 30px;
-  border-radius: 28px;
-  background-color: rgba(20, 30, 50, 0.55);
-  border: 1px solid rgba(0, 195, 255, 0.08);
-}
-
-.sobre p {
-  margin-top: 15px;
-}
-
-/* integrantes */
-
-.integrantes {
-  margin-top: 30px;
-  padding: 30px;
-  border-radius: 28px;
-  background-color: rgba(20, 30, 50, 0.55);
-  border: 1px solid rgba(0, 195, 255, 0.08);
-}
-
-.integrantes ul {
-  list-style: none;
-  margin-top: 20px;
-}
-
-.integrantes li {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.08);
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 18px;
-  transition: 0.3s;
-}
-
-/* tecnologias */
-.tecnologias {
-  margin-top: 30px;
-=======
-.tabela-container{
   width: 100%;
 
   overflow-x: auto;
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
 }
 
 @media (max-width: 1260px) {
@@ -605,11 +419,6 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-<<<<<<< HEAD
-=======
-
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
-  /* tablet */
   .topo {
     padding: 20px;
   }
@@ -624,11 +433,6 @@ button:hover {
 }
 
 @media (max-width: 360px) {
-<<<<<<< HEAD
-=======
-
->>>>>>> 5c4fabf274276726953c3482bfaa4f9b3975e1aa
-  /* celular */
   .topo {
     flex-direction: column;
 
