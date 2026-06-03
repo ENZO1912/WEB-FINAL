@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +7,35 @@
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    
-    <div class="conteiner">
 
-        <h2>PÁGINA DE LOGIN</h2>
-        <!-- FALTA CSS -->
-        <form class="formulario" id="formLogin">
-            <div>
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" placeholder="Digite seu E-mail" required/>
-            </div>
-            
-            <div>
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" placeholder="Digite sua senha" required>
-            </div>
+    <div class="container-login">
 
-            <div>
+        <div class="cards-login">
+
+            <h2>PÁGINA DE LOGIN</h2>
+
+            <form class="formulario" id="formLogin">
+
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="Digite seu E-mail" required>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" placeholder="Digite sua senha" required>
+                </div>
+
                 <button type="submit">Login</button>
-            </div>
 
-            <!-- ALTERAR LINK DEPOIS -->
-            <div>
-                <button onclick="window.location.href='/paginas/sobre.html'">Criar Conta</button>
-            </div>
-        </form>
+                <button type="button" onclick="window.location.href='/paginas/sobre.html'">
+                    Criar Conta
+                </button>
+
+            </form>
+
+        </div>
+
     </div>
 
 </body>
