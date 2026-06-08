@@ -68,3 +68,13 @@ button {
 button:hover {
   background: linear-gradient(135deg, #01c4ff, #0077ff);
 }
+span {
+  color: #d7efff;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+a{
+    color: rgb(243, 243, 243);
+    text-decoration: underline;
+}
