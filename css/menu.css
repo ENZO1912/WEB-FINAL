@@ -10,72 +10,94 @@ body {
 	color: #222;
 }
 
-.container {
-	width: 90%;
-	max-width: 1000px;
-	margin: 30px auto;
-	background-color: white;
-	padding: 25px;
-	border-radius: 8px;
-}
 
 .topo {
-	background-color: #1F4E79;
+	background-color: rgba(25, 45, 75, 0.55);
+	border: 1px solid rgba(0, 195, 255, 0.12);
 	color: white;
 	padding: 18px 40px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
+	border-radius: 28px;
+	margin: 20px;
+	flex-direction: column;
 }
 
 .logo {
-	font-size: 24px;
+	font-size: 32px;
+	color: #d8f3ff;
 }
+
+/* menu desktop */
 
 .menu {
 	display: flex;
 	gap: 18px;
+	margin-left: center;
 }
 
 .menu a {
-	color: white;
 	text-decoration: none;
+	color: white;
+	background: linear-gradient(135deg, #123c66, #1f4e79);
+	padding: 12px 22px;
+	border-radius: 28px;
 	font-weight: bold;
-	padding: 8px 10px;
-	border-radius: 4px;
 }
 
-.menu a:hover, .menu a.ativo {
-	background-color: rgba(255, 255, 255, 0.2);
+.menu a:hover,
+.menu a.ativo {
+	background: linear-gradient(135deg, #01c4ff, #0077ff);
 }
+/* botão hambúrguer */
 
 .menu-botao {
 	display: none;
 	background: none;
-	border: none;
-	color: white;
-	font-size: 28px;
-	cursor: pointer;
+	border-radius: 28px;
+	color: #d8f3ff;
+	font-size: 30px;
+	padding: 0;
+	margin: 0;
 }
 
-@media (max-width: 600px) {
-	.topo {
-		flex-direction: column;
-		align-items: stretch;
-		gap: 12px;
-	}
-	
-	.menu-botao {
-		display: block;
-		align-self: flex-start; 
-	}
-	
-	.menu {
-		display: none;
-		flex-direction: column;
-		gap: 8px;
-	}
+/* celular */
 
-	.menu.aberto {
-		display: flex; }
+@media (max-width: 600px) {
+
+  .topo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .menu-botao {
+    display: block;
+    margin: 0;
+    font-size: 30px;
+  }
+
+  .logo {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .menu.aberto {
+    display: flex;
+  }
+
+  .menu a {
+    text-align: center;
+  }
 }

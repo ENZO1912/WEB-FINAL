@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+  html,body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -51,7 +57,7 @@ h3 {
 
 /* dentro dos cards */
 p {
-  background-color: rgba(255, 255, 255, 0.349);
+  background-color: rgba(255, 255, 255, 0.137);
   color: rgb(255, 255, 255);
   padding: 20px;
   border-radius: 20px;
@@ -62,8 +68,7 @@ p {
 
 /* container */
 .container {
-  width: 90%;
-  max-width: 1100px;
+  width: 95%;
   margin: 30px auto;
   background-color: rgba(10, 20, 35, 0.52);
   border: 1px solid rgba(0, 195, 255, 0.08);
@@ -89,23 +94,6 @@ p {
   background-color: rgba(20, 30, 50, 0.842);
   border-radius: 28px;
   text-align: center;
-}
-/* formulario */
-.formulario {
-  justify-content: center;
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-  margin: 25px;
-  padding: 25px;
-  border-radius: 28px;
-  color: #ffffff;
-  background-color: rgba(20, 30, 50, 0.548);
-  border: 1px solid rgba(0, 195, 255, 0.08);
-}
-
-.formulario button:hover {
-  background-color: #01c4ff;
 }
 
 label {
@@ -135,6 +123,33 @@ button {
 button:hover {
   background: linear-gradient(135deg, #01c4ff, #0077ff);
 }
+/* formulario */
+.formulario {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin: 25px;
+  padding: 25px;
+
+  border-radius: 28px;
+  color: #ffffff;
+
+  background-color: rgba(20, 30, 50, 0.548);
+  border: 1px solid rgba(0, 195, 255, 0.08);
+}
+
+.formulario input,
+.formulario select {
+  min-width: 180px;
+  flex: 1;
+}
+
+.formulario button:hover {
+  background-color: #01c4ff;
+}
+
 
 /* emprestimos tabela */
 .tabela-emprestimos {
@@ -165,6 +180,7 @@ button:hover {
 
 .tabela-container {
   width: 100%;
+  overflow-x: auto;
 }
 
 /* sobre */
@@ -180,136 +196,178 @@ button:hover {
   margin-top: 15px;
 }
 
-footer {
-    margin-top: 400px;
+/* integrantes */
+
+.integrantes {
+  margin-top: 30px;
+  padding: 30px;
+  border-radius: 28px;
+  background-color: rgba(20, 30, 50, 0.55);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 195, 255, 0.08);
 }
+
+.integrantes ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.integrantes li {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.137);
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.tecnologias {
+  margin-top: 30px;
+}
+
+ span{
+  color: #d7efff;
+  font-weight: bold;
+  font-size: 14px;
+ }
+
 .footer-conteiner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding: 20px;
+  text-align: center;
+  background-color: rgba(20, 30, 50, 0.55);
+  border: 1px solid rgba(0, 195, 255, 0.08);
+  gap: 15px;
+  border-radius: 28px;
+  padding: 15px;
+  margin-top: 30px;
 }
 
-.instagram-icon {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    cursor: pointer;
-}
-
-.instagram-icon:hover {
-    transform: scale(1.1);
-}
-
-.facebook-icon {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    cursor: pointer;
-}
-
-.facebook-icon:hover {
-    transform: scale(1.1);
-}
-
+.redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  align-items: center;  
+}   
+.instagram-icon,
+.facebook-icon,
 .whatsapp-icon {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    cursor: pointer;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: 0.3s;
 }
 
+.instagram-icon:hover,
+.facebook-icon:hover,
 .whatsapp-icon:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
-
-
-
-@media (max-width: 1260px) {
-  .topo {
-    padding: 20px;
-  }
-
-  .cards {
-    flex-wrap: wrap;
-  }
-
-  .card {
-    flex: 1 1 45%;
-  }
-
-  .formulario {
-    flex-wrap: wrap;
-  }
-
-  .formulario {
-    flex: 1 1 45%;
-  }
-}
-
-@media (max-width: 1300px) {
-  .topo {
-    flex-direction: column;
-
-    gap: 12px;
-
-    text-align: center;
-  }
-
-  nav a {
-    display: block;
-
-    margin: 8px 0;
-  }
-
-  .cards {
-    flex-direction: column;
-  }
+@media (max-width: 1520px) {
 
   .formulario {
     flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
   }
 
-  .formulario {
-    flex: 1 1 45%;
+  .formulario input,
+  .formulario select,
+  .formulario button {
+    width: 100%;
   }
+
 }
 
 @media (max-width: 768px) {
-  /* tablet */
-  .topo {
-    padding: 20px;
+
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 15px;
+    margin: 15px auto;
   }
 
   .cards {
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   .card {
-    flex: 1 1 45%;
+    width: 100%;
+  }
+
+  .formulario {
+    margin: 10px 0;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .tabela-container {
+    overflow-x: auto;
+  }
+
+  .tabela-emprestimos {
+    min-width: 600px;
+  }
+
+  .sobre,
+  .integrantes {
+    padding: 20px;
+  }
+
+  .footer-conteiner {
+    padding: 15px;
   }
 }
 
-@media (max-width: 360px) {
-  /* celular */
-  .topo {
-    flex-direction: column;
+@media (max-width: 480px) {
 
-    gap: 12px;
-
-    text-align: center;
+  h1 {
+    font-size: 28px;
   }
 
-  .cards {
-    flex-direction: column;
+  h2 {
+    padding: 15px;
+    font-size: 22px;
   }
 
-  .formulario {
-    flex-direction: column;
+  h3 {
+    padding: 15px;
+    font-size: 18px;
   }
 
-  .formulario {
-    flex: 1 1 45%;
+  p {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .container,
+  .sobre,
+  .integrantes {
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .instagram-icon,
+  .facebook-icon,
+  .whatsapp-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .redes {
+    gap: 10px;
+  }
+
+  .tabela-emprestimos {
+    min-width: 500px;
   }
 }
