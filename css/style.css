@@ -248,6 +248,7 @@ button:hover {
   gap: 15px;
   margin-bottom: 10px;
   align-items: center;  
+  border-radius: 28px;
 }   
 .instagram-icon,
 .facebook-icon,
@@ -256,6 +257,7 @@ button:hover {
   height: 40px;
   object-fit: contain;
   transition: 0.3s;
+  border-radius: 20px;
 }
 
 .instagram-icon:hover,
