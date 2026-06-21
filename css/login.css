@@ -16,10 +16,9 @@ h2 {
   background: rgba(10, 20, 50, 0.75);
   border: 1px solid rgba(0, 195, 255, 0.2);
   backdrop-filter: blur(12px);
-  padding: 40px;
+  padding: 30px;
   border-radius: 30px;
-  width: 100%;
-  max-width: 400px;
+  max-width: 450px;
 }
 
 .login-h2 {
@@ -47,6 +46,10 @@ label {
   color: #d7efff;
   border-radius: 10px;
   font-weight: bold;
+}
+select {
+  color: #474747;
+  border-radius: 10px;
 }
 
 span {

@@ -7,6 +7,38 @@ const dataDevolucao = document.getElementById("Devolução");
 const tabela = document.getElementById("corpoTabelaEmprestimos");
 
 // ===============================
+// COLOCAR DATA ATUAL AUTOMATICAMENTE
+// ===============================
+
+function colocarDatasAutomaticas() {
+  const hoje = new Date();
+
+  const ano = hoje.getFullYear();
+
+  const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+
+  const dia = String(hoje.getDate()).padStart(2, "0");
+
+  // data do empréstimo
+
+  dataEmprestimo.value = `${ano}-${mes}-${dia}`;
+
+  // data de devolução (+30 dias)
+
+  hoje.setDate(hoje.getDate() + 30);
+
+  const anoDev = hoje.getFullYear();
+
+  const mesDev = String(hoje.getMonth() + 1).padStart(2, "0");
+
+  const diaDev = String(hoje.getDate()).padStart(2, "0");
+
+  dataDevolucao.value = `${anoDev}-${mesDev}-${diaDev}`;
+}
+
+colocarDatasAutomaticas();
+
+// ===============================
 // CALCULAR DATA DE DEVOLUÇÃO
 // ===============================
 
@@ -58,9 +90,7 @@ function criarLinhaEmprestimo(item) {
         <td>${item.dataDevolucao}</td>
 
         <td class="status">
-
             ${item.status}
-
         </td>
 
         <td>
@@ -157,6 +187,10 @@ formulario.addEventListener("submit", function (event) {
 
   formulario.reset();
 
+  // coloca as datas novamente depois do reset
+
+  colocarDatasAutomaticas();
+
   alert("Empréstimo realizado com sucesso!");
 });
 
@@ -185,18 +219,27 @@ function devolverLivro(id, linha, botao) {
     }
   }
 
-  localStorage.setItem("emprestimos", JSON.stringify(emprestimos));
+  localStorage.setItem(
+    "emprestimos",
+
+    JSON.stringify(emprestimos),
+  );
 
   localStorage.setItem(
     "biblioteca_livros",
 
     JSON.stringify(livros),
   );
+
   linha.querySelector(".status").innerText = "Devolvido";
+
   botao.innerText = "Devolvido";
+
   botao.disabled = true;
 }
 
-// iniciar página
+// ===============================
+// INICIAR PÁGINA
+// ===============================
 
 carregarEmprestimos();

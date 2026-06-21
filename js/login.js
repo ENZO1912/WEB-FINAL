@@ -1,100 +1,51 @@
 const formularioLogin = document.getElementById("formLogin");
 
+formularioLogin.addEventListener("submit", function (event) {
+  event.preventDefault();
 
+  const email = document.getElementById("email").value;
 
-formularioLogin.addEventListener("submit", function(event){
+  const senha = document.getElementById("pwd").value;
 
-    event.preventDefault();
+  const tipo = document.getElementById("tipoUsuario").value;
 
+  // Usuário administrador fixo
 
+  const administrador = {
+    email: "admin@biblioteca.com",
 
-    const email = document.getElementById("email").value;
+    senha: "123456",
 
-    const senha = document.getElementById("pwd").value;
+    tipo: "criador",
 
-    const tipo = document.getElementById("tipoUsuario").value;
+    nome: "Administrador",
+  };
 
+  let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
+  // adiciona o admin na busca
 
-    // Usuário administrador fixo
+  usuarios.push(administrador);
 
-    const administrador = {
+  const usuarioEncontrado = usuarios.find(function (usuario) {
+    return (
+      usuario.email === email &&
+      usuario.senha === senha &&
+      usuario.tipo === tipo
+    );
+  });
 
-        email:"admin@biblioteca.com",
+  if (usuarioEncontrado) {
+    localStorage.setItem(
+      "usuarioLogado",
 
-        senha:"123456",
+      JSON.stringify(usuarioEncontrado),
+    );
 
-        tipo:"criador",
+    alert("Login realizado com sucesso!");
 
-        nome:"Administrador"
-
-    };
-
-
-
-    let usuarios = JSON.parse(
-        localStorage.getItem("usuarios")
-    ) || [];
-
-
-
-    // adiciona o admin na busca
-
-    usuarios.push(administrador);
-
-
-
-    const usuarioEncontrado = usuarios.find(function(usuario){
-
-
-        return (
-
-            usuario.email === email &&
-
-            usuario.senha === senha &&
-
-            usuario.tipo === tipo
-
-        );
-
-
-    });
-
-
-
-    if(usuarioEncontrado){
-
-
-        localStorage.setItem(
-
-            "usuarioLogado",
-
-            JSON.stringify(usuarioEncontrado)
-
-        );
-
-
-
-        alert(
-            "Login realizado com sucesso!"
-        );
-
-
-
-        window.location.href="../index.html";
-
-
-
-    }else{
-
-
-        alert(
-            "E-mail, senha ou tipo de usuário incorreto!"
-        );
-
-
-    }
-
-
-
+    window.location.href = "/paginas/index.html";
+  } else {
+    alert("E-mail, senha ou tipo de usuário incorreto!");
+  }
 });

@@ -1,79 +1,67 @@
+const formulario = document.querySelector(".formulario");
+
 function carregarLivros() {
+  const livros = localStorage.getItem("biblioteca_livros");
 
-    const livros = localStorage.getItem("biblioteca_livros");
+  if (livros) {
+    const lista = JSON.parse(livros);
 
-
-    if (livros) {
-
-        const lista = JSON.parse(livros);
-
-
-        // se existir mas estiver vazio cria os iniciais
-        if(lista.length > 0){
-
-            return lista;
-
-        }
-
+    // se existir mas estiver vazio cria os iniciais
+    if (lista.length > 0) {
+      return lista;
     }
+  }
 
+  const livrosIniciais = [
+    {
+      id: 1,
+      titulo: "Dom Casmurro",
+      autor: "Machado de Assis",
+      categoria: "Romance",
+      ano: "1899",
+      status: "Disponível",
+    },
 
+    {
+      id: 2,
+      titulo: "O Pequeno Príncipe",
+      autor: "Antoine de Saint-Exupéry",
+      categoria: "Fantasia",
+      ano: "1943",
+      status: "Disponível",
+    },
 
-    const livrosIniciais = [
+    {
+      id: 3,
+      titulo: "Harry Potter e a Pedra Filosofal",
+      autor: "J.K. Rowling",
+      categoria: "Fantasia",
+      ano: "1997",
+      status: "Disponível",
+    },
 
-        {
-            id: 1,
-            titulo: "Dom Casmurro",
-            autor: "Machado de Assis",
-            categoria: "Romance",
-            ano: "1899",
-            status: "Disponível"
-        },
+    {
+      id: 4,
+      titulo: "A Menina que Roubava Livros",
+      autor: "Markus Zusak",
+      categoria: "Drama",
+      ano: "2005",
+      status: "Disponível",
+    },
 
-        {
-            id: 2,
-            titulo: "O Pequeno Príncipe",
-            autor: "Antoine de Saint-Exupéry",
-            categoria: "Fantasia",
-            ano: "1943",
-            status: "Disponível"
-        },
+    {
+      id: 5,
+      titulo: "A Revolução dos Bichos",
+      autor: "George Orwell",
+      categoria: "Política/Ficção",
+      ano: "1945",
+      status: "Disponível",
+    },
+  ];
 
-        {
-            id: 3,
-            titulo: "Harry Potter e a Pedra Filosofal",
-            autor: "J.K. Rowling",
-            categoria: "Fantasia",
-            ano: "1997",
-            status: "Disponível"
-        },
+  salvarLivros(livrosIniciais);
 
-        {
-            id: 4,
-            titulo: "1984",
-            autor: "George Orwell",
-            categoria: "Ficção",
-            ano: "1949",
-            status: "Disponível"
-        },
-
-        {
-            id: 5,
-            titulo: "A Revolução dos Bichos",
-            autor: "George Orwell",
-            categoria: "Política/Ficção",
-            ano: "1945",
-            status: "Disponível"
-        }
-
-    ];
-
-
-    salvarLivros(livrosIniciais);
-
-
-    return livrosIniciais;
-
+  return livrosIniciais;
 }
 
 // ===============================
@@ -102,6 +90,7 @@ function mostrarLivros() {
   }
 
   const livros = carregarLivros();
+  console.log(livros);
 
   tabela.innerHTML = "";
 
@@ -178,5 +167,7 @@ if (formulario) {
 // ===============================
 // INICIAR PÁGINA
 // ===============================
+
+console.log("livros.js funcionando");
 
 mostrarLivros();
