@@ -13,8 +13,6 @@
 	<main class="container">
 		<h2>Livros</h2>
 	
-  
-
    <form class="formulario">
 
     <label for="nome">Título:</label>
@@ -38,6 +36,26 @@
 
     <button type="submit">Salvar Livro</button>
   </form>
+
+<h2>Livros Cadastrados</h2>
+
+<div class="tabela-container">
+    <table class="tabela-emprestimos">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Categoria</th>
+                <th>Ano</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+       <tbody id="corpoTabelaLivros">
+</tbody>
+    </table>
+</div>
+
   </main>
 
  <footer class="footer-conteiner">
@@ -58,5 +76,11 @@
   <span>&copy; 2026 Biblioteca Online.</span>
 </footer>
 <script src="../js/menu.js"></script>
+<script src="../js/livros.js"></script>
+<script src="../js/protecao.js"></script>
+
+<script>
+protegerPagina();
+</script>
   </body>
 </html>

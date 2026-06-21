@@ -23,15 +23,36 @@
                 <label for="password">Senha:</label>
                 <input type="password" id="pwd" placeholder="Digite sua senha" required>
                 <input type="checkbox" onclick="pwd.type = this.checked ? 'text' : 'password'"><span>Mostrar</span></input>
-                </span>
+            </section>
+
+               <!-- escolha do tipo de usuário -->
+            <section class="cards-login">
+
+                <label for="tipoUsuario">
+                    Tipo:
+                </label>
+
+                <select id="tipoUsuario">
+
+                    <option value="aluno">
+                        Aluno
+                    </option>
+
+                    <option value="criador">
+                        Criador
+                    </option>
+
+                </select>
 
             </section>
 
-                <!-- fazer a parte de banco de dados e mudar essa parte do link -->
+            <div id="mensagem"></div>
                 <button  type="submit">Login</button>
         </form>
        <span>Não possui conta?</span><a href="../paginas/registro.html"> Criar Conta</a>
     </main>
+
+    <script src="../js/login.js"></script>
 
 </body>
 </html>

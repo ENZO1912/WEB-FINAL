@@ -4,78 +4,199 @@ const dataEmprestimo = document.getElementById("emprestimo");
 
 const dataDevolucao = document.getElementById("Devolução");
 
-dataEmprestimo.addEventListener("change", function(){
+const tabela = document.getElementById("corpoTabelaEmprestimos");
 
-    // data escolhida
-    const data = new Date(dataEmprestimo.value);
+// ===============================
+// CALCULAR DATA DE DEVOLUÇÃO
+// ===============================
 
-    // somar 30 dias
-    data.setDate(data.getDate() + 30);
+dataEmprestimo.addEventListener("change", function () {
+  const data = new Date(dataEmprestimo.value);
 
-    // formatar
-    const ano = data.getFullYear();
+  // adiciona 30 dias
 
-    const mes = String(data.getMonth() + 1).padStart(2, "0");
+  data.setDate(data.getDate() + 30);
 
-    const dia = String(data.getDate()).padStart(2, "0");
+  const ano = data.getFullYear();
 
-    // definir data máxima
-    dataDevolucao.max = ano + "-" + mes + "-" + dia;
+  const mes = String(data.getMonth() + 1).padStart(2, "0");
 
+  const dia = String(data.getDate()).padStart(2, "0");
+
+  dataDevolucao.value = ano + "-" + mes + "-" + dia;
 });
 
-formulario.addEventListener("submit", function(event){
+// ===============================
+// CARREGAR EMPRÉSTIMOS SALVOS
+// ===============================
 
-    // impede recarregar a página
-    event.preventDefault();
+function carregarEmprestimos() {
+  const emprestimos = JSON.parse(localStorage.getItem("emprestimos")) || [];
 
-    // pegar valores
-    const aluno = document.getElementById("nome").value;
+  tabela.innerHTML = "";
 
-    const livro = document.getElementById("name").value;
+  emprestimos.forEach(function (item) {
+    criarLinhaEmprestimo(item);
+  });
+}
 
-    const emprestimo = document.getElementById("emprestimo").value;
+// ===============================
+// CRIAR LINHA NA TABELA
+// ===============================
 
-    const devolucao = document.getElementById("Devolução").value;
+function criarLinhaEmprestimo(item) {
+  const linha = document.createElement("tr");
 
-    // pegar tabela
-    const tabela = document.getElementById("corpoTabela");
+  linha.innerHTML = `
 
-    // criar linha
-    const linha = document.createElement("tr");
+        <td>${item.aluno}</td>
 
-    // conteúdo da linha
-    linha.innerHTML = `
-        <td>${aluno}</td>
-        <td>${livro}</td>
-        <td>${emprestimo}</td>
-        <td>${devolucao}</td>
+        <td>${item.livro}</td>
+
+        <td>${item.dataEmprestimo}</td>
+
+        <td>${item.dataDevolucao}</td>
 
         <td class="status">
-            Emprestado
+
+            ${item.status}
+
         </td>
 
         <td>
+
             <button class="btnDevolver">
+
                 Devolver
+
             </button>
+
         </td>
+
     `;
 
-    // adicionar linha na tabela
-    tabela.appendChild(linha);
+  tabela.appendChild(linha);
 
-    // botão devolver
-    const botao = linha.querySelector(".btnDevolver");
+  const botao = linha.querySelector(".btnDevolver");
 
-    botao.addEventListener("click", function(){
+  if (item.status === "Devolvido") {
+    botao.disabled = true;
+  }
 
-        linha.querySelector(".status").innerText = "Disponível";
+  botao.addEventListener("click", function () {
+    devolverLivro(item.id, linha, botao);
+  });
+}
 
-        botao.innerText = "Devolvido";
+// ===============================
+// CADASTRAR EMPRÉSTIMO
+// ===============================
 
-        botao.disabled = true;
+formulario.addEventListener("submit", function (event) {
+  event.preventDefault();
 
+  const aluno = document.getElementById("nome").value;
+
+  const nomeLivro = document.getElementById("name").value;
+
+  const emprestimo = document.getElementById("emprestimo").value;
+
+  const devolucao = document.getElementById("Devolução").value;
+
+  let livros = JSON.parse(localStorage.getItem("biblioteca_livros")) || [];
+
+  const livro = livros.find(function (item) {
+    return item.titulo.toLowerCase().trim() === nomeLivro.toLowerCase().trim();
+  });
+
+  if (!livro) {
+    alert("Livro não encontrado!");
+
+    return;
+  }
+
+  if (livro.status === "Emprestado") {
+    alert("Este livro já está emprestado!");
+
+    return;
+  }
+
+  livro.status = "Emprestado";
+
+  localStorage.setItem(
+    "biblioteca_livros",
+
+    JSON.stringify(livros),
+  );
+
+  let emprestimos = JSON.parse(localStorage.getItem("emprestimos")) || [];
+
+  const novoEmprestimo = {
+    id: Date.now(),
+
+    aluno: aluno,
+
+    livro: nomeLivro,
+
+    dataEmprestimo: emprestimo,
+
+    dataDevolucao: devolucao,
+
+    status: "Emprestado",
+  };
+
+  emprestimos.push(novoEmprestimo);
+
+  localStorage.setItem(
+    "emprestimos",
+
+    JSON.stringify(emprestimos),
+  );
+
+  criarLinhaEmprestimo(novoEmprestimo);
+
+  formulario.reset();
+
+  alert("Empréstimo realizado com sucesso!");
+});
+
+// ===============================
+// DEVOLVER LIVRO
+// ===============================
+
+function devolverLivro(id, linha, botao) {
+  let emprestimos = JSON.parse(localStorage.getItem("emprestimos")) || [];
+
+  let livros = JSON.parse(localStorage.getItem("biblioteca_livros")) || [];
+
+  const emprestimo = emprestimos.find(function (item) {
+    return item.id === id;
+  });
+
+  if (emprestimo) {
+    emprestimo.status = "Devolvido";
+
+    const livro = livros.find(function (item) {
+      return item.titulo === emprestimo.livro;
     });
 
-});
+    if (livro) {
+      livro.status = "Disponível";
+    }
+  }
+
+  localStorage.setItem("emprestimos", JSON.stringify(emprestimos));
+
+  localStorage.setItem(
+    "biblioteca_livros",
+
+    JSON.stringify(livros),
+  );
+  linha.querySelector(".status").innerText = "Devolvido";
+  botao.innerText = "Devolvido";
+  botao.disabled = true;
+}
+
+// iniciar página
+
+carregarEmprestimos();
