@@ -44,7 +44,7 @@ formularioLogin.addEventListener("submit", function (event) {
 
     alert("Login realizado com sucesso!");
 
-    window.location.href = "/paginas/index.html";
+    window.location.href = "../index.html";
   } else {
     alert("E-mail, senha ou tipo de usuário incorreto!");
   }
